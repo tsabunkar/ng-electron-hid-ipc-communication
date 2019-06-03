@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var HID = require('node-hid');
+var fs = require("fs");
 var HIDDevices = /** @class */ (function () {
     function HIDDevices() {
         var _this = this;
@@ -14,6 +15,10 @@ var HIDDevices = /** @class */ (function () {
                     });
             });
             return devices;
+        };
+        this.storeListOfDevicesInDesktop = function (devices, app) {
+            var desktopPath = app.getPath('desktop');
+            fs.writeFile(desktopPath + '/myfile.txt', JSON.stringify(devices, null, 2), 'utf-8', console.log);
         };
     }
     return HIDDevices;

@@ -1,4 +1,5 @@
 const HID = require('node-hid');
+import * as fs from 'fs';
 
 export class HIDDevices {
   duplicatedevices = HID.devices();
@@ -14,5 +15,15 @@ export class HIDDevices {
         )
     );
     return devices;
+  }
+
+  storeListOfDevicesInDesktop = (devices, app) => {
+    const desktopPath = app.getPath('desktop');
+    fs.writeFile(
+      desktopPath + '/myfile.txt',
+      JSON.stringify(devices, null, 2),
+      'utf-8',
+      console.log
+    );
   }
 }

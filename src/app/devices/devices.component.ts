@@ -23,4 +23,8 @@ export class DevicesComponent implements OnInit {
       this.changeDetectorRef.detectChanges();
     });
   }
+
+  export() {
+    this.electronService.ipcRenderer.send('triggerToStore', this.devicesList);
+  }
 }
