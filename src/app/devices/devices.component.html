@@ -1,0 +1,12 @@
+<h3>Devices connected :</h3>
+<div style="border: 1px solid black" *ngFor="let device of devicesList">
+  <p>
+    {{ device.manufacturer }}
+  </p>
+  <p>
+    {{ device.product }}
+  </p>
+  <p>
+    {{ device.productId }}
+  </p>
+</div>
