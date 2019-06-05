@@ -5,14 +5,14 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-devices',
   templateUrl: './devices.component.html',
-  styleUrls: ['./devices.component.scss']
+  styleUrls: ['./devices.component.scss'],
 })
 export class DevicesComponent implements OnInit {
   devicesList;
 
   constructor(
     private electronService: ElectronService,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
   ) {}
 
   ngOnInit() {

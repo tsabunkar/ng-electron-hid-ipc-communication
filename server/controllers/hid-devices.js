@@ -18,7 +18,7 @@ var HIDDevices = /** @class */ (function () {
         };
         this.storeListOfDevicesInDesktop = function (devices, app) {
             var desktopPath = app.getPath('desktop');
-            fs.writeFile(desktopPath + '/myfile.txt', JSON.stringify(devices, null, 2), 'utf-8', console.log);
+            fs.writeFile(desktopPath + "/myfile.txt", JSON.stringify(devices, null, 2), 'utf-8', console.log);
         };
     }
     return HIDDevices;

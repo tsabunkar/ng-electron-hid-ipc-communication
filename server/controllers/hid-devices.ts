@@ -11,8 +11,8 @@ export class HIDDevices {
         index ===
         self.findIndex(
           t =>
-            t.productId === device.productId && t.vendorId === device.vendorId
-        )
+            t.productId === device.productId && t.vendorId === device.vendorId,
+        ),
     );
     return devices;
   }
@@ -20,10 +20,10 @@ export class HIDDevices {
   storeListOfDevicesInDesktop = (devices, app) => {
     const desktopPath = app.getPath('desktop');
     fs.writeFile(
-      desktopPath + '/myfile.txt',
+      `${desktopPath}/myfile.txt`,
       JSON.stringify(devices, null, 2),
       'utf-8',
-      console.log
+      console.log,
     );
   }
 }

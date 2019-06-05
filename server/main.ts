@@ -3,7 +3,8 @@ import * as path from 'path';
 import * as url from 'url';
 import { HIDDevices } from './controllers/hid-devices';
 
-let win, serve;
+let win;
+let serve;
 const args = process.argv.slice(1);
 serve = args.some(val => val === '--serve');
 
@@ -15,17 +16,17 @@ function createWindow() {
   win = new BrowserWindow({
     x: 0,
     y: 0,
-    width: 700,
+    width: 900,
     height: size.height,
     webPreferences: {
-      nodeIntegration: true
-    }
+      nodeIntegration: true,
+    },
   });
 
   console.log(path.join(__dirname, '/../', 'dist/index.html'));
   if (serve) {
     require('electron-reload')(__dirname, {
-      electron: require(`${__dirname}/../node_modules/electron`)
+      electron: require(`${__dirname}/../node_modules/electron`),
     });
     win.loadURL('http://localhost:4200');
   } else {
@@ -33,8 +34,8 @@ function createWindow() {
       url.format({
         pathname: path.join(__dirname, '/../', 'dist/index.html'),
         protocol: 'file:',
-        slashes: true
-      })
+        slashes: true,
+      }),
     );
   }
 
