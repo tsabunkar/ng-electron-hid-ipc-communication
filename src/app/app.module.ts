@@ -18,6 +18,8 @@ import { WebviewDirective } from './directives/webview.directive';
 
 import { AppComponent } from './app.component';
 import { DevicesComponent } from './devices/devices.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomMaterialModule } from './custom-material/custom-material.module';
 
 // AoT requires an exported function for factories
 // tslint:disable-next-line:function-name
@@ -39,6 +41,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    BrowserAnimationsModule,
+    CustomMaterialModule,
   ],
   providers: [ElectronService],
   bootstrap: [AppComponent],
